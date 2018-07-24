@@ -1,0 +1,8 @@
+{
+  "name": "iterm-tab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/elrumordelaluz/iterm-tab.git",
+  "author": "Lionel T <elrumordelaluz@hotmail.com> (https://elrumordelaluz.com/)",
+  "license": "MIT"
+}

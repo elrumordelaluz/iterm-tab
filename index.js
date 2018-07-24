@@ -23,6 +23,7 @@ const itermTab = async (cmd, options) => {
   try {
     return await exec(open(cmd), options)
   } catch (err) {
+    process.exit(0)
     console.log({ err })
   }
 }

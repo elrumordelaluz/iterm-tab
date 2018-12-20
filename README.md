@@ -19,7 +19,7 @@ itermTab(`cd .. && echo "my command"`, 'hola')
 
 ## API
 
-itermTab(command, tabName)
+itermTab(command, tabName, close)
 
 #### command
 
@@ -28,6 +28,14 @@ Type: `String`
 #### tabName
 
 Type: `String`
+
+#### close
+
+Closes tab immediately or after n seconds. Useful to launch persistent services like `mongod`.
+
+Type: `Boolean|Number`
+
+Default: `false`
 
 ## Example
 

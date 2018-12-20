@@ -13,19 +13,17 @@ yarn add iterm-tab
 ```
 const itermTab = require('iterm-tab')
 
-itermTab(`cd .. && echo "my command"`, 'hola')
+itermTab(`cd .. && echo "my command"`)
   .then(() => console.log('yay'))
 ```
 
 ## API
 
-itermTab(command, tabName, close)
+itermTab(command, close)
 
 #### command
 
-Type: `String`
-
-#### tabName
+The command to execute after open the new tab
 
 Type: `String`
 

@@ -4,13 +4,12 @@ const exec = promisify(child_process.exec)
 
 const args = process.argv
 
-const open = (cmd, name, close = false) => `osascript -e '
+const open = (cmd, close = false) => `osascript -e '
   if application "iTerm2" is running then
     tell application "iTerm2"
       tell current window
         create tab with default profile
         tell current session
-          set name to "${name}"
           write text "${cmd.replace(/"/g, '\\"')}"
         end tell
         ${
@@ -33,9 +32,9 @@ const open = (cmd, name, close = false) => `osascript -e '
   end if
 '`
 
-const itermTab = async (cmd, name, close, options) => {
+const itermTab = async (cmd, close, options) => {
   try {
-    return await exec(open(cmd, name, close), options)
+    return await exec(open(cmd, close), options)
   } catch (err) {
     process.exit(0)
     console.log({ err })

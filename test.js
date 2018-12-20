@@ -1,7 +1,8 @@
 const itermTab = require('./')
 
 const init = async () => {
-  await itermTab(`cd .. && echo "my command"`, 'hola')
-  await itermTab(`echo "my command 2"`, 'ciao')
+  await itermTab(`cd .. && echo "Command with persisting tab…"`, 'hola')
+  await itermTab(`echo "Command will close in 3 secs"`, 'ciao', 3)
+  await itermTab(`echo "Command will close immediately"`, 'ciao', true)
 }
 init()

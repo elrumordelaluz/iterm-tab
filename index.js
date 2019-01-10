@@ -4,7 +4,7 @@ const exec = promisify(child_process.exec)
 
 const args = process.argv
 
-const open = (cmd, close = false) => `osascript -e '
+const open = (cmd, { close = false, delayAfterRun = 0 }) => `osascript -e '
   if application "iTerm2" is running then
     tell application "iTerm2"
       tell current window
@@ -25,6 +25,7 @@ const open = (cmd, close = false) => `osascript -e '
         `
             : ''
         }
+        ${delayAfterRun ? `delay ${delayAfterRun}` : ''}
       end tell
     end tell
   else
@@ -32,9 +33,9 @@ const open = (cmd, close = false) => `osascript -e '
   end if
 '`
 
-const itermTab = async (cmd, close, options) => {
+const itermTab = async (cmd, { close, delayAfterRun } = {}, options) => {
   try {
-    return await exec(open(cmd, close), options)
+    return await exec(open(cmd, { close, delayAfterRun }), options)
   } catch (err) {
     process.exit(0)
     console.log({ err })

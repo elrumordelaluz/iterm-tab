@@ -19,7 +19,7 @@ itermTab(`cd .. && echo "my command"`)
 
 ## API
 
-itermTab(command, close)
+itermTab(command, options)
 
 #### command
 
@@ -27,13 +27,25 @@ The command to execute after open the new tab
 
 Type: `String`
 
-#### close
+#### options
+
+Type: `Object`
+
+##### options.close
 
 Closes tab immediately or after n seconds. Useful to launch persistent services like `mongod`.
 
 Type: `Boolean|Number`
 
 Default: `false`
+
+##### options.delayAfterRun
+
+Wait numbero of seconds before let continue the tasks.
+
+Type: `Number`
+
+Default: `0`
 
 ## Example
 

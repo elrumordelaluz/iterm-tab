@@ -41,11 +41,23 @@ Default: `false`
 
 ##### options.delayAfterRun
 
-Wait numbero of seconds before let continue the tasks.
+Wait number of seconds before let continue the tasks.
 
 Type: `Number`
 
 Default: `0`
+
+##### options.splitTab
+
+Split the current tab horizontally or vertically then run the command.
+
+Type: `Boolean|String`
+
+Default: false
+
+For Vertical Split: `{ splitTab: 'vertically' }`
+
+For Horizontal Split: `{ splitTab: 'horizontally' }`
 
 ## Example
 
